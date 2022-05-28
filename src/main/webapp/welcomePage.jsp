@@ -29,11 +29,10 @@
         <% for(int i=0; i < arr.size(); i++){ %>
         	<tr>
         	<% DepartmentDTO dto = (DepartmentDTO) arr.get(i); 
-        		if(dto.getDepartment().equalsIgnoreCase("Dept 1"))
         	%>
         	<td><%= dto.getDepartment() %>
         	</td>
-        	<td><a href="detailProfile.jsp"><%= dto.getStudentId() %></a></td>
+        	<td><a href='#' onclick='javascript:window.open("detailProfile.jsp?value=<%= dto.getStudentName() %>", "_blank", "scrollbars=1,resizable=1,height=300,width=450");' title='<%= dto.getStudentName() %>'><%= dto.getStudentId()%></a></td>
         	<td><%= dto.getMark() %></td>
         	</tr>
         <% } %>

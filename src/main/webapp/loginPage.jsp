@@ -23,7 +23,7 @@
 <title>Login Page</title>
 </head>
 <body>
-<form action=LoginServlet method="post" id="formLogin">
+<form action=LoginServlet method="POST" id="formLogin">
 	 <pre>
 	 	User Id : <input type="text" name="userId">
 	 	Password : <input type type=password name="password">

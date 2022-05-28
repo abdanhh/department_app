@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		if(userId.equals("admin") && password.equals("admin")) {
-			response.sendRedirect("welcomePage.jsp");
+			response.sendRedirect("WelcomeServlet");
 		} else {
 			out.println("Sorry! username or password incorrect... Try again!!");
 			RequestDispatcher rd = request.getRequestDispatcher("loginPage.jsp");
