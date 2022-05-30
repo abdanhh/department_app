@@ -24,19 +24,21 @@
     
     <tbody>
      <% ArrayList arr = (ArrayList) request.getAttribute("dep");
-     	int count = 0;
      %>
         <% for(int i=0; i < arr.size(); i++){ %>
         	<tr>
-        	<% DepartmentDTO dto = (DepartmentDTO) arr.get(i); 
-        	%>
+        	<% DepartmentDTO dto = (DepartmentDTO) arr.get(i);%>
         	<td><%= dto.getDepartment() %>
         	</td>
         	<td><a href='#' onclick='javascript:window.open("detailProfile.jsp?value=<%= dto.getStudentName() %>", "_blank", "scrollbars=1,resizable=1,height=300,width=450");' title='<%= dto.getStudentName() %>'><%= dto.getStudentId()%></a></td>
         	<td><%= dto.getMark() %></td>
-        	</tr>
+        	<%
+        		DepartmentService service = new DepartmentService();
+        	%>
+        	<td><%=service.countPass(dto.getDepartment()) %></td>  
+        </tr>
         <% } %>
-         
+        
          </tbody>
     </table>
  </form>

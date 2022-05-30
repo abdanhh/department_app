@@ -21,4 +21,21 @@ public List<DepartmentDTO> getAllStudent(){
 		
 		return list;
 	}
+
+public float countPass(String department) {
+	float count = 0.0f;
+ 	float pass =0.0f;
+ 	float total = 0.0f;
+	for(DepartmentDTO dto : getAllStudent()) {
+		if(dto.getDepartment().equalsIgnoreCase(department)) {
+			if (dto.getMark() >= 40) {
+				pass++;
+			}
+    		count++;
+    	} 
+	}
+	total =  (pass/count)*100;
+	return total;
+}
+
 }
